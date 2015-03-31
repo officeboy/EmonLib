@@ -111,6 +111,8 @@ void EnergyMonitor::calcVI(unsigned int crossings, unsigned int timeout)
     //    - so this method allows us to sample an integer number of half wavelengths which increases accuracy
     //-----------------------------------------------------------------------------       
     lastVCross = checkVCross;                     
+      //added for testing sample speed.
+  samp = numberOfSamples;
     if (sampleV > startV) checkVCross = true; 
                      else checkVCross = false;
     if (numberOfSamples==1) lastVCross = checkVCross;                  
@@ -134,6 +136,7 @@ void EnergyMonitor::calcVI(unsigned int crossings, unsigned int timeout)
   realPower = V_RATIO * I_RATIO * sumP / numberOfSamples;
   apparentPower = Vrms * Irms;
   powerFactor=realPower / apparentPower;
+
 
   //Reset accumulators
   sumV = 0;
