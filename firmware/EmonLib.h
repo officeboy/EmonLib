@@ -42,6 +42,11 @@ class EnergyMonitor
        powerFactor,
        Vrms,
        Irms;
+    /*************
+     * Testing Stuff*
+     **************/
+       int samp;
+       
 
   private:
 
